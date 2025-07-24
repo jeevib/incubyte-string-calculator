@@ -9,7 +9,7 @@ class StringCalculator
       delimiter = ",|\n"
     end
 
-    parts = numbers.split(/#{delimiter}/).map(&:to_i)
+    parts = numbers.split(/#{delimiter}/).map(&:to_i).reject { |n| n > 1000 }
 
     negatives = parts.select { |num| num < 0 }
     if negatives.any?
