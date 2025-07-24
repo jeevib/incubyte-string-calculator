@@ -6,5 +6,10 @@ RSpec.describe StringCalculator do
 			result = StringCalculator.add("")
 			expect(result).to eq(0)
 		end
+
+		it "retuns the same input if input is a single number" do
+			result = StringCalculator.add("5")
+			expect(result).to eq(5)
+		end
 	end
 end
