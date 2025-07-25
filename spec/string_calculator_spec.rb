@@ -13,7 +13,7 @@ RSpec.describe StringCalculator do
 		end
 
 		it 'returns sum of two numbers if separated by a comma' do
-			result = StringCalculator.add('2, 3')
+			result = StringCalculator.add('2,3')
 			expect(result).to eq(5)
 		end
 
@@ -40,6 +40,11 @@ RSpec.describe StringCalculator do
 
 		it 'supports delimiters of any length' do
 			result = StringCalculator.add("//[***]\n1***2***3")
+			expect(result).to eq(6)
+		end
+
+		it 'supports multiple delimiters' do
+			result = StringCalculator.add("//[*][%]\n1*2%3")
 			expect(result).to eq(6)
 		end
 	end
